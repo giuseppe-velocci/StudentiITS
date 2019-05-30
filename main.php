@@ -29,6 +29,7 @@ function main() {
     testDump($itsIct, "ITS ICT Torino");
     testDump($corsoICTBackend, "Corso Backend");
     testDump($studenteBackend, "Studente del corso backend");
+    testDump($studenteBackend->getIstituto(), "Istituto del corso backend");
 
     echo "<h2>Anno di fine del corso</h2>", $studenteBackend->getAnnoFineCorso();
 }

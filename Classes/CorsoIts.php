@@ -42,4 +42,8 @@ class CorsoIts {
         }
         return true;
     }
+
+    public function getIstituto():Istituto {
+        return $this->istituto;
+    }
 }

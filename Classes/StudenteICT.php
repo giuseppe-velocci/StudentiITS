@@ -11,20 +11,30 @@ class StudenteICT extends AbstractStudente {
 
     protected $itsEmailDomain = "@edu.itspiemonte.it";
 
+    // public
     public function __construct(string $nome, string $cognome, string $genere, DateTime $dataNascita, int $annoIscrizione, CorsoITS $corso) {
         parent::__construct($nome, $cognome, $genere, $dataNascita, $annoIscrizione);
         $this->corso = $corso;
         $this->email = $this->newEmail($nome, $cognome);
     }
 
+    public function getIstituto() :Istituto {
+        return $this->corso->getIstituto();
+    }
+
     public function setAziendaStage(string $azienda) : void {
         $this->aziendaStage = $azienda;
+    }
+
+    public function getAziendaStage() : string {
+        return $this->aziendaStage;
     }
 
     public function setVoto(string $materia, int $voto) :bool {
         return ($this->corso->setVoto($materia, $voto));
     }
 
+    // protected
     protected function getDurataCorso() :int {
         return $this->corso->getDurataInAnni();
     }
