@@ -35,7 +35,7 @@ class CorsoIts {
             return false;
         }
         
-        if ($voto > MAX_VOTO) {
+        if ($voto > self::MAX_VOTO) {
             $this->materie[$materia]->setVoto(0); 
         } else {
             $this->materie[$materia]->setVoto($voto); 
